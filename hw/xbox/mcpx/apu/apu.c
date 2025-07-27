@@ -245,9 +245,6 @@ static void monitor_init(MCPXAPUState *d)
     SDL_AudioDeviceID sdl_audio_dev;
     sdl_audio_dev = SDL_OpenAudioDevice(NULL, 0, &sdl_audio_spec, NULL, 0);
     if (sdl_audio_dev == 0) {
-        fprintf(stderr, "SDL_OpenAudioDevice failed: %s\n", SDL_GetError());
-        assert(!"SDL_OpenAudioDevice failed");
-        exit(1);
     }
     SDL_PauseAudioDevice(sdl_audio_dev, 0);
 }
